@@ -35,6 +35,10 @@ def iou(pr, gt, eps=1e-7, threshold=None, ignore_channels=None):
         shape_min = min([pr.shape[2], gt.shape[2]])
         pr = pr[:,:,:shape_min,:]
         gt = gt[:,:,:shape_min,:]
+    if pr.shape[1] != gt.shape[1]:
+        shape_min = min([pr.shape[1], gt.shape[1]])
+        pr = pr[:,:shape_min,:,:]
+        gt = gt[:,:shape_min,:,:]
 
     intersection = torch.sum(gt * pr)
     union = torch.sum(gt) + torch.sum(pr) - intersection + eps
@@ -112,6 +116,10 @@ def precision(pr, gt, eps=1e-7, threshold=None, ignore_channels=None):
         shape_min = min([pr.shape[2], gt.shape[2]])
         pr = pr[:,:,:shape_min,:]
         gt = gt[:,:,:shape_min,:]
+    if pr.shape[1] != gt.shape[1]:
+        shape_min = min([pr.shape[1], gt.shape[1]])
+        pr = pr[:,:shape_min,:,:]
+        gt = gt[:,:shape_min,:,:]
 
     tp = torch.sum(gt * pr)
     fp = torch.sum(pr) - tp
@@ -139,6 +147,10 @@ def recall(pr, gt, eps=1e-7, threshold=None, ignore_channels=None):
         shape_min = min([pr.shape[2], gt.shape[2]])
         pr = pr[:,:,:shape_min,:]
         gt = gt[:,:,:shape_min,:]
+    if pr.shape[1] != gt.shape[1]:
+        shape_min = min([pr.shape[1], gt.shape[1]])
+        pr = pr[:,:shape_min,:,:]
+        gt = gt[:,:shape_min,:,:]
 
     tp = torch.sum(gt * pr)
     fn = torch.sum(gt) - tp

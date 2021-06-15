@@ -35,4 +35,7 @@ def init_arguments():
     parser.add_argument('-pfs', '--plot_figsize', nargs='+', type=int, default=[8, 6], help='Figure size of model performance plot. Its length should be 2.')
     parser.add_argument('-de', '--debug', action='store_true')
 
+    # Prediction
+    parser.add_argument('-ppi', '--produce_predicted_images', action='store_true')
+
     return parser

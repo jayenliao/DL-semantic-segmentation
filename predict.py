@@ -24,7 +24,7 @@ def produce_predicted_images(args, best_model=None):
     loader_test = DataLoader(dataset_test, batch_size=1, num_workers=args.num_workers_ev)
     print('The data loader is prepared for prediction.')
 
-    saveFOLDER = args.modelFN.replace('best_model.pth') if args.modelPATH == '' else os.path.join(args.savePATH, args.modelPATH)
+    saveFOLDER = args.modelFN.replace('best_model.pth', '') if args.modelPATH == '' else os.path.join(args.savePATH, args.modelPATH)
     best_model.eval()
     with tqdm(loader_test, desc='Output Prediction', file=sys.stdout, disable=False) as iterator:
         for i, x in enumerate(iterator):
