@@ -33,5 +33,6 @@ def init_arguments():
     parser.add_argument('-e', '--epochs', type=int, default=10, help='No. of epochs')
     parser.add_argument('-tm', '--trained_model', type=str, default='', help='File name of the trained model that is going to keep being trained or to be evaluated. Set an empty string if not using a pretrained model.')
     parser.add_argument('-pfs', '--plot_figsize', nargs='+', type=int, default=[8, 6], help='Figure size of model performance plot. Its length should be 2.')
-    
+    parser.add_argument('-de', '--debug', action='store_true')
+
     return parser

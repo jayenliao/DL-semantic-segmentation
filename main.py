@@ -66,11 +66,11 @@ def main(args):
     # Create epoch runners, which are simple loops of iterating over dataloader`s samples
     train_epoch = smp.utils.train.TrainEpoch(
         model, loss=loss, metrics=metrics, 
-        optimizer=optimizer, device=args.DEVICE, verbose=True,
+        optimizer=optimizer, device=args.DEVICE, verbose=True
     )
     valid_epoch = smp.utils.train.ValidEpoch(
         model, loss=loss, metrics=metrics, 
-        device=args.DEVICE, verbose=True,
+        device=args.DEVICE, verbose=True
     )
 
     # [3] Train model for 40 epochs with validation
@@ -82,8 +82,8 @@ def main(args):
 
     for i in range(args.epochs):
         print('\nEpoch: {}'.format(i))
-        train_logs = train_epoch.run(loader_tr)
-        valid_logs = valid_epoch.run(loader_va)
+        train_logs = train_epoch.run(loader_tr, debug=args.debug)
+        valid_logs = valid_epoch.run(loader_va, debug=args.debug)
         if max_score < valid_logs['iou_score']:
             max_score = valid_logs['iou_score']
             torch.save(model, folder_name+'best_model.pth')
@@ -97,7 +97,7 @@ def main(args):
     model = torch.load(fn)
     print('The best model', fn, 'is loaded.')
     test_epoch = smp.utils.train.ValidEpoch(model=model, loss=loss, metrics=metrics, device=args.DEVICE)
-    logs = test_epoch.run(loader_te)
+    logs = test_epoch.run(loader_te, debug=args.debug)
 
     return model, fn
     

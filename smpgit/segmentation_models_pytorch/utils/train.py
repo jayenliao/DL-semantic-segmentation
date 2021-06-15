@@ -3,7 +3,6 @@ import torch
 from tqdm import tqdm as tqdm
 from .meter import AverageValueMeter
 
-
 class Epoch:
 
     def __init__(self, model, loss, metrics, stage_name, device='cpu', verbose=True):
@@ -33,7 +32,7 @@ class Epoch:
     def on_epoch_start(self):
         pass
 
-    def run(self, dataloader):
+    def run(self, dataloader, debug=False):
 
         self.on_epoch_start()
 
@@ -62,7 +61,9 @@ class Epoch:
                 if self.verbose:
                     s = self._format_logs(logs)
                     iterator.set_postfix_str(s)
-                #break
+                
+                if debug:
+                    break
 
         return logs
 
