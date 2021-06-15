@@ -93,7 +93,7 @@ def main(args):
             print('Decrease decoder learning rate to 1e-5!')
 
     # [4] Evaluate the model on the testing set
-    fn = os.path.join(args.savePATH, args.modelPATH, 'best_model.pth')
+    fn = os.path.join(folder_name, 'best_model.pth')
     model = torch.load(fn)
     print('The best model', fn, 'is loaded.')
     test_epoch = smp.utils.train.ValidEpoch(model=model, loss=loss, metrics=metrics, device=args.DEVICE)
