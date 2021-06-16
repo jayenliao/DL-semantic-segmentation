@@ -168,6 +168,8 @@ To download data or to learn more details about the data, please go [here](https
 
 - `./smpgit/segmentation_models_pytorch/`: socure codes of [segmentation_models_pytorch](https://github.com/qubvel/segmentation_models.pytorch/tree/master/segmentation_models_pytorch)
 
+- `visualization.ipynb`: plots of Metrics and visualization of predictions
+
 ## Usage
 
 ```
