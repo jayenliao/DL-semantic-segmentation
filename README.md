@@ -168,9 +168,12 @@ To download data or to learn more details about the data, please go [here](https
 
 - `./smpgit/segmentation_models_pytorch/`: socure codes of [segmentation_models_pytorch](https://github.com/qubvel/segmentation_models.pytorch/tree/master/segmentation_models_pytorch)
 
-## Requirement
-
 ## Usage
+
+```
+python3 main.py -enc 'efficientnet-b4' -e 100 -d 'cuda:0'
+python3 predict.py -Pm '16-02-58-45efficientnet-b4_bs=8_epochs=30'
+```
 
 ## Reference
 
