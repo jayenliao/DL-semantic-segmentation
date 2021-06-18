@@ -41,37 +41,60 @@ To download data or to learn more details about the data, please go [here](https
     - `./test/gtLabels/` contains 1000 png files (black).
     - `./test/rgbImages/` contains 1000 png files (normal).
     - `./test/rgbLabels/` contains 1000 png files (RGB labels).
-    
+
 - `./WoodScape_ICCV19/`:
-    - `~/box_2d_annotations/`:
-        - `box_2d_annotation_info.json`
-        - `~/box_2d_annotations/` contains 8234 txt files.
-        
-    - `~/calibration_data/`:
-        - `calibration_readme.md`
-        - `~/calibration/` contains 8234 json files.
-   
-    - `~/instance_annotations/`:
-        - `~/class_info.json`
-        - `~/instance_annotations/` contains 8234 json files.
-   
-    - `~/motion_annotations/`:
-        - `~/motion_annotation_info.json`
+
+    <details><summary>Click me</summary>
+    <p>
+
+        - `~/box_2d_annotations/`:
+
+            - `box_2d_annotation_info.json`
+
+            - `~/box_2d_annotations/` contains 8234 txt files.
+
+        - `~/calibration_data/`:
+
+            - `calibration_readme.md`
+
+            - `~/calibration/` contains 8234 json files.
+
+        - `~/instance_annotations/`:
+
+            - `~/class_info.json`
+
+            - `~/instance_annotations/` contains 8234 json files.
+
         - `~/motion_annotations/`:
-            - `~/gtLabels/` contains 8234 png files.
-            - `~/rgbLabels` contains 8234 png files.
-   
-    - `~/semantic_annotations/`:
-        - `seg_annotation_info.json`
+
+            - `~/motion_annotation_info.json`
+
+            - `~/motion_annotations/`:
+
+                - `~/gtLabels/` contains 8234 png files.
+
+                - `~/rgbLabels` contains 8234 png files.
+
         - `~/semantic_annotations/`:
-            - `~/gtLabels/` contains 8234 png files.
-            - `~/rgbLabels` contains 8234 png files.
-            
-    - `~/soiling_dataset/`:
-        - `~/soiling_annotation_info.json`
-    
-    - `~/vehicle_data/`:
-        - `~/vehicle_info/` contains 8234 json files.
+
+            - `seg_annotation_info.json`
+
+            - `~/semantic_annotations/`:
+
+                - `~/gtLabels/` contains 8234 png files.
+
+                - `~/rgbLabels` contains 8234 png files.
+
+        - `~/soiling_dataset/`:
+
+            - `~/soiling_annotation_info.json`
+
+        - `~/vehicle_data/`:
+
+            - `~/vehicle_info/` contains 8234 json files.
+
+    </p>
+    </details>
 
 To download data or to learn more details about the data, please go [here](https://github.com/valeoai/WoodScape) and [here](https://competitions.codalab.org/competitions/30993).
 
