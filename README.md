@@ -77,6 +77,11 @@ To download data or to learn more details about the data, please go [here](https
 
 ### Data organization
 
+## collapsible markdown?
+
+<details><summary>Click me to see details</summary>
+<p>
+
 ```
 woodscape
 │   README.md    
@@ -147,6 +152,9 @@ woodscape
         |   |   ...
 ```
 
+</p>
+</details>
+
 [CAM] :
 
 - FV --> Front CAM
@@ -172,7 +180,7 @@ To download data or to learn more details about the data, please go [here](https
 
 ## Usage
 
-```
+```bash
 python3 main.py -enc 'efficientnet-b4' -e 100 -d 'cuda:0'
 python3 predict.py -Pm '16-02-58-45efficientnet-b4_bs=8_epochs=30'
 ```
